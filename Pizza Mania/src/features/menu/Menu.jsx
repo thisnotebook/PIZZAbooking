@@ -7,6 +7,7 @@ export async function loader() {
   const menu = await getMenu();
   return menu;
 }
+
 function Menu() {
   const menu = useLoaderData()
   return (
