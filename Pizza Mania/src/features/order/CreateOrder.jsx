@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Form, redirect, useActionData, useNavigate, useNavigation } from "react-router-dom";
 import { createOrder } from "../../services/apiRestaurant";
+import Button from "../../ui/Button";
 
 // https://uibakery.io/regex-library/phone-number
 const isValidPhone = (str) =>
@@ -16,6 +17,7 @@ const fakeCart = [
     unitPrice: 16,
     totalPrice: 32,
   },
+
   {
     pizzaId: 6,
     name: "Vegetale",
@@ -41,19 +43,19 @@ function CreateOrder() {
   const formErroes = useActionData();
 
   return (
-    <div className="max-w-3xl mx-auto overflow-scroll">
+    <div className="max-w-3xl mx-auto overflow-scroll p-5">
       <h2>Ready to order? Let's go!</h2>
 
       <Form method="POST">
         <div>
           <label>First Name</label>
-          <input type="text" name="customer" required />
+          <input type="text" name="customer" required className="input" />
         </div>
 
         <div>
-          <label>Phone number</label>
+          <label >Phone number</label>
           <div>
-            <input type="tel" name="phone" required />
+            <input type="tel" name="phone" required className="input" />
           </div>
           {formErroes?.phone && <p>{formErroes.phone}</p>}
         </div>
@@ -61,12 +63,15 @@ function CreateOrder() {
         <div>
           <label>Address</label>
           <div>
-            <input type="text" name="address" required />
+            <input type="text" name="address" required
+              className="input"
+            />
           </div>
         </div>
 
         <div>
           <input
+            className="h-4 w-4 accent-yellow-400 focus-outline-none focus:ring-yellow-400 focus:ring-offset-1 focus:ring-2"
             type="checkbox"
             name="priority"
             id="priority"
@@ -77,12 +82,12 @@ function CreateOrder() {
         </div>
         <div>
           <input type="hidden" name="cart" value={JSON.stringify(cart)}></input>
-          <button disabled={isSubmitting}
-            className="bg-yellow-500 px-4 py-2 hover:bg-yellow-300
-            uppercase font-semibold text-stone-800
-            inline-block tracking-wide rounded-full transition-colors duration-300 focus:outline-none focus:ring focus:ring-yellow-300 focus:bg-yellow-300 focus:ring-offset-2
-             disabled:cursor-not-allowed"
-          >{!isSubmitting ? "Order now" : "Placing Order..."}</button>
+
+          <Button disabled={isSubmitting}
+          >
+            {!isSubmitting ? "Order now" : "Placing Order..."}
+          </Button>
+
         </div>
       </Form>
     </div>
