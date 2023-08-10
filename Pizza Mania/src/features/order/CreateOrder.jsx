@@ -41,7 +41,7 @@ function CreateOrder() {
   const formErroes = useActionData();
 
   return (
-    <div>
+    <div className="max-w-3xl mx-auto overflow-scroll">
       <h2>Ready to order? Let's go!</h2>
 
       <Form method="POST">
@@ -77,7 +77,12 @@ function CreateOrder() {
         </div>
         <div>
           <input type="hidden" name="cart" value={JSON.stringify(cart)}></input>
-          <button disabled={isSubmitting}>{!isSubmitting ? "Order now" : "Placing Order..."}</button>
+          <button disabled={isSubmitting}
+            className="bg-yellow-500 px-4 py-2 hover:bg-yellow-300
+            uppercase font-semibold text-stone-800
+            inline-block tracking-wide rounded-full transition-colors duration-300 focus:outline-none focus:ring focus:ring-yellow-300 focus:bg-yellow-300 focus:ring-offset-2
+             disabled:cursor-not-allowed"
+          >{!isSubmitting ? "Order now" : "Placing Order..."}</button>
         </div>
       </Form>
     </div>
