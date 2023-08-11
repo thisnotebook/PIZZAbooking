@@ -11,7 +11,7 @@ export async function loader() {
 function Menu() {
   const menu = useLoaderData()
   return (
-    <div>
+    <div className="grid grid-cols-2">
       <h1>Menu</h1>
       {menu.map(pizza => <MenuItem pizza={pizza} key={pizza.id} />)}
     </div>)

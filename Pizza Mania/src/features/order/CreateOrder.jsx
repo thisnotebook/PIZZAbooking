@@ -43,11 +43,11 @@ function CreateOrder() {
   const formErroes = useActionData();
 
   return (
-    <div className="max-w-3xl mx-auto overflow-scroll p-5">
-      <h2>Ready to order? Let's go!</h2>
+    <div className="max-w-3xl mx-auto overflow-scroll  p-5 ml-4">
+      <h2 className="mb-3 text-yellow-400 text-2xl">Ready to order? Let's go!</h2>
 
-      <Form method="POST">
-        <div>
+      <Form method="POST" className="flex flex-col gap-4">
+        <div >
           <label>First Name</label>
           <input type="text" name="customer" required className="input" />
         </div>
@@ -83,14 +83,13 @@ function CreateOrder() {
         <div>
           <input type="hidden" name="cart" value={JSON.stringify(cart)}></input>
 
-          <Button disabled={isSubmitting}
-          >
+          <Button disabled={isSubmitting}>
             {!isSubmitting ? "Order now" : "Placing Order..."}
           </Button>
 
         </div>
-      </Form>
-    </div>
+      </Form >
+    </div >
   );
 }
 
