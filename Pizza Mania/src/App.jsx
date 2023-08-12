@@ -17,12 +17,14 @@ const router = createBrowserRouter([
       element: <Home />
 
     },
+
     {
       path: "/menu",
       element: <Menu />,
       loader: menuLoader,
       errorElement: <Error />,
     },
+
     {
       path: "/cart",
       element: <Cart />
