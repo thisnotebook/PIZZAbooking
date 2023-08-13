@@ -8,6 +8,7 @@ import AppLayout from "./ui/AppLayout"
 import { Children } from "react"
 import Error from "./ui/Error"
 
+
 const router = createBrowserRouter([
   {
     element: <AppLayout />,
