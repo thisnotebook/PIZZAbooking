@@ -7,6 +7,7 @@ Features :)
 Pizza Selection: Browse through a diverse range of delicious pizzas.
 Order Placement: Easily book your favorite pizza through the user-friendly interface.
 Order Tracking: Stay informed about the current status of your pizza delivery.
+
 Technology Stack:)
 
 React, Javascript, npm packages, Redux , tailwind etc.
